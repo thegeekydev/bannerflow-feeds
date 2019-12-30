@@ -12,8 +12,11 @@ import { GlobalVariable } from "src/app/configs/global";
 export class FeedsRepositoryService {
   constructor(private http: HttpClient) {}
 
-  getFeeds(limit: number): Observable<any> {
+  getFeeds(limit: number, pagination: any): Observable<any> {
     let url = `${GlobalVariable.BASE_API_URL}r/sweden.json?limit=${limit}`;
+    if (pagination) {
+      url = `${url}&${pagination.type}=${pagination.id}`;
+    }
     return this.http.get<any>(url).pipe(
       tap(_ => console.log(`fetched feeds list`)),
       catchError(this.handleError("getFeeds", []))

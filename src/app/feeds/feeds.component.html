@@ -2,14 +2,23 @@
   <section class="controls">
     <div class="limit">
       <label>Items per page:</label>
-      <select>
+      <select
+        [ngModel]="limit"
+        (ngModelChange)="onChangeLimit($event)"
+        name="limit"
+        ngDefaultControl
+      >
         <option [value]="i" *ngFor="let i of limits">{{ i }}</option>
       </select>
     </div>
 
     <div class="pagination">
-      <button>Previous</button>
-      <button>Next</button>
+      <button (click)="changePagination('before', feeds.after)">
+        Previous
+      </button>
+      <button (click)="changePagination('after', feeds.after)">
+        Next
+      </button>
     </div>
   </section>
 
@@ -26,7 +35,7 @@
         </div>
       </div>
       <div class="feed-body">
-        <a [routerLink]="['/feed', feed.data.id]">
+        <a [routerLink]="['/feed', feed.data.id, slugTitle(feed.data.title)]">
           <h2 class="feed-title">
             {{ feed.data.title }}
           </h2>
