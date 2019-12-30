@@ -1,0 +1,74 @@
+@import "../../styles.scss";
+
+:host {
+  width: calc(100% - 400px - 200px);
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.feed-item {
+  border-radius: 0.5em;
+  border: 1px solid darken($light, 10);
+  margin-bottom: 2em;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+  a {
+    color: darken($light, 40);
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    &.feed-header {
+      border-bottom: 1px solid darken($light, 10);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.feed-body {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &.feed-footer {
+      padding-top: 0;
+      padding-bottom: 0;
+      justify-content: flex-end;
+      border-top: 1px solid darken($light, 10);
+    }
+  }
+
+  .feed-title {
+    color: $dark;
+    font-size: 1.2em;
+  }
+
+  .icon {
+    max-width: 20px;
+    margin-right: 0.4em;
+  }
+
+  .comments {
+    margin-left: 1.5em;
+  }
+
+  .link {
+    margin-left: 0.8em;
+  }
+}

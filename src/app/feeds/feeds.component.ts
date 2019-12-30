@@ -12,6 +12,7 @@ export class FeedsComponent implements OnInit {
   feeds: Object = null;
   limits: Array<number> = GlobalVariable.limits;
   limit: number = GlobalVariable.limits[1];
+  baseURL = GlobalVariable.BASE_API_URL;
 
   constructor(private feedsRepoService: FeedsRepositoryService) {}
 
