@@ -14,12 +14,19 @@ export class FeedsRepositoryService {
 
   getFeeds(limit: number, pagination: any): Observable<any> {
     let url = `${GlobalVariable.BASE_API_URL}r/sweden.json?limit=${limit}`;
-    if (pagination) {
+    if (pagination && pagination.hasOwnProperty('id')) {
       url = `${url}&${pagination.type}=${pagination.id}`;
     }
     return this.http.get<any>(url).pipe(
       tap(_ => console.log(`fetched feeds list`)),
       catchError(this.handleError("getFeeds", []))
+    );
+  }
+
+  getFeedByURL(url: string): Observable<any> {
+    return this.http.get<any>(`${GlobalVariable.BASE_API_URL}${url}`).pipe(
+      tap(_ => console.log(`fetched movie with url=${url}`)),
+      catchError(this.handleError<any>(`getMovie url=${url}`))
     );
   }
 

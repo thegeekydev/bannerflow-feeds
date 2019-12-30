@@ -1,0 +1,31 @@
+@import "../../../styles.scss";
+
+:host {
+  width: calc(100% - 400px);
+}
+
+.feed-header {
+  h2 {
+    margin-bottom: 0;
+  }
+
+  span {
+    margin-right: 0.3em;
+    color: $secondaryDark;
+    text-transform: uppercase;
+    &.text {
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li ul {
+    margin-left: 1em;
+  }
+}

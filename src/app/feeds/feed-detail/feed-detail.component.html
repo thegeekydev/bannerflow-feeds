@@ -1,1 +1,18 @@
-<p>feed-detail works!</p>
+<div *ngIf="feed" class="content">
+  <section class="feed-header">
+    <h2>{{ feed.title }}</h2>
+    <div class="feed-author-info">
+      <span class="title">author:</span>
+      <span class="text">{{ feed.author }}</span>
+      <span class="title">published on:</span>
+      <span class="text">{{ feed.created * 1000 | date: "dd/MM/yyyy" }}</span>
+    </div>
+  </section>
+
+  <section class="feed-content">
+    <figure *ngIf="feed.thumbnail != 'self'">
+      <img src="{{ feed.thumbnail }}" alt="feed thumbnail" />
+    </figure>
+    <p>{{ feed.selftext }}</p>
+  </section>
+</div>
