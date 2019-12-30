@@ -1,0 +1,60 @@
+@import "../../../styles.scss";
+
+:host {
+  width: 200px;
+  height: calc(100vh - 200px);
+  padding: 0.5em;
+}
+
+.sidebar-box {
+  margin-bottom: 3em;
+
+  .box-title {
+    display: block;
+    color: lighten($secondaryDark, 30);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  a {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $secondaryDark;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    &.active,
+    &:hover {
+      color: $primary;
+      font-weight: bold;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -1em;
+        width: 3px;
+        height: 30px;
+        background-color: $primary;
+      }
+    }
+  }
+
+  img {
+    max-width: 20px;
+    margin-right: 1em;
+  }
+}
