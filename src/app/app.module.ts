@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutes } from './routes';
 import { AppComponent } from './app.component';
+import { FeedsComponent } from './feeds/feeds.component';
+import { FeedsModule } from './feeds/feeds.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes, {useHash: true}),
+    FeedsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

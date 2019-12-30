@@ -1,6 +1,7 @@
 {
   "name": "bannerflow-feeds",
   "version": "0.0.0",
+  "author": "Morteza Aghilinasab | morteza@thegeeky.dev",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
