@@ -33,11 +33,11 @@
     >
       <div class="feed-header">
         <div class="author">
-          <img src="/assets/icons/author.svg" class="icon" alt="author" />
+          <img src="assets/icons/author.svg" class="icon" alt="author" />
           <span>{{ feed.data.author }}</span>
         </div>
         <div class="calendar">
-          <img src="/assets/icons/calendar.svg" class="icon" alt="calendar" />
+          <img src="assets/icons/calendar.svg" class="icon" alt="calendar" />
           <span>{{ feed.data.created * 1000 | date: "dd/MM/yyyy" }}</span>
         </div>
       </div>
@@ -53,11 +53,11 @@
       </div>
       <div class="feed-footer">
         <div class="score">
-          <img src="/assets/icons/heart.svg" class="icon" alt="heart" />
+          <img src="assets/icons/heart.svg" class="icon" alt="heart" />
           <span>{{ feed.data.score }}</span>
         </div>
         <div class="comments">
-          <img src="/assets/icons/comments.svg" class="icon" alt="comments" />
+          <img src="assets/icons/comments.svg" class="icon" alt="comments" />
           <span>{{ feed.data.num_comments }}</span>
         </div>
 
@@ -67,7 +67,7 @@
           rel="noopener"
           [attr.href]="baseURL + feed.data.permalink"
         >
-          <img src="/assets/icons/link.svg" class="icon link" alt="link" />
+          <img src="assets/icons/link.svg" class="icon link" alt="link" />
         </a>
       </div>
     </div>
