@@ -3,11 +3,13 @@ const slugify = require("@sindresorhus/slugify");
 
 import { GlobalVariable } from "src/app/configs/global";
 import { FeedsRepositoryService } from "./services/feeds-repository.services";
+import { FadeIn } from "../shared/animations/fade-in";
 
 @Component({
   selector: "app-feeds",
   templateUrl: "./feeds.component.html",
-  styleUrls: ["./feeds.component.scss"]
+  styleUrls: ["./feeds.component.scss"],
+  animations: [FadeIn]
 })
 export class FeedsComponent implements OnInit {
   feeds: Object = null;

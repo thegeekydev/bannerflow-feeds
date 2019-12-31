@@ -14,7 +14,7 @@ export class FeedsRepositoryService {
 
   getFeeds(limit: number, pagination: any): Observable<any> {
     let url = `${GlobalVariable.BASE_API_URL}r/sweden.json?limit=${limit}`;
-    if (pagination && pagination.hasOwnProperty('id')) {
+    if (pagination && pagination.hasOwnProperty("id")) {
       url = `${url}&${pagination.type}=${pagination.id}`;
     }
     return this.http.get<any>(url).pipe(

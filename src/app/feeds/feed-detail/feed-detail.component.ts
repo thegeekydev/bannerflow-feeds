@@ -2,11 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { FeedsRepositoryService } from "../services/feeds-repository.services";
+import { FadeIn } from "src/app/shared/animations/fade-in";
 
 @Component({
   selector: "app-feed-detail",
   templateUrl: "./feed-detail.component.html",
-  styleUrls: ["./feed-detail.component.scss"]
+  styleUrls: ["./feed-detail.component.scss"],
+  animations: [FadeIn]
 })
 export class FeedDetailComponent implements OnInit {
   feed: object = null;

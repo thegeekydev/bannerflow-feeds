@@ -1,4 +1,6 @@
-<div *ngIf="feed" class="content">
+<app-spinner-loader [loading]="!feed"></app-spinner-loader>
+
+<div *ngIf="feed" class="content" [@simpleFadeAnimation]="'in'">
   <section class="feed-header">
     <h2>{{ feed.title }}</h2>
     <div class="feed-author-info">

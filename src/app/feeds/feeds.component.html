@@ -1,4 +1,6 @@
-<div class="feeds-list" *ngIf="feeds">
+<app-spinner-loader [loading]="!feeds"></app-spinner-loader>
+
+<div class="feeds-list" *ngIf="feeds" [@simpleFadeAnimation]="'in'">
   <section class="controls">
     <div class="limit">
       <label>Items per page:</label>
