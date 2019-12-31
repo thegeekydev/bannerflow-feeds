@@ -5,6 +5,7 @@ import { CommonModule } from "@angular/common";
 
 import { FeedsRepositoryService } from "./services/feeds-repository.services";
 import { FeedDetailComponent } from "./feed-detail/feed-detail.component";
+import { CommentsComponent } from "../comments/comments.component";
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { FeedDetailComponent } from "./feed-detail/feed-detail.component";
     ]),
     CommonModule
   ],
-  declarations: [FeedDetailComponent],
+  declarations: [FeedDetailComponent, CommentsComponent],
   exports: [],
   providers: [HttpClientModule, FeedsRepositoryService]
 })

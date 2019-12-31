@@ -1,0 +1,8 @@
+<div *ngFor="let comment of comments" class="comment">
+  <p class="author">
+    {{ comment.author }} wrote on
+    {{ comment.created * 1000 | date: "dd/MM/yyyy HH:mm" }}
+  </p>
+  <p class="text">{{ comment.text }}</p>
+  <app-comments [comments]="comment.replies"></app-comments>
+</div>

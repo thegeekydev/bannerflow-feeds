@@ -25,8 +25,8 @@ export class FeedsRepositoryService {
 
   getFeedByURL(url: string): Observable<any> {
     return this.http.get<any>(`${GlobalVariable.BASE_API_URL}${url}`).pipe(
-      tap(_ => console.log(`fetched movie with url=${url}`)),
-      catchError(this.handleError<any>(`getMovie url=${url}`))
+      tap(_ => console.log(`fetched feed with url=${url}`)),
+      catchError(this.handleError<any>(`getFeedByURL url=${url}`))
     );
   }
 

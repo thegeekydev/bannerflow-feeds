@@ -11,6 +11,7 @@ import { FeedsRepositoryService } from "../services/feeds-repository.services";
 export class FeedDetailComponent implements OnInit {
   feed: object = null;
   comments: Array<any> = null;
+  commentsAndReplies: Array<any> = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,6 +24,7 @@ export class FeedDetailComponent implements OnInit {
     this.feedsRepoService.getFeedByURL(url).subscribe(feed => {
       this.feed = this.extractData("detail", feed);
       this.comments = this.extractData("comments", feed);
+      this.commentsAndReplies = this.getReplies(this.comments);
     });
   }
 
@@ -43,5 +45,22 @@ export class FeedDetailComponent implements OnInit {
   generateFeedURL(id: string, title: string): string {
     let url = `r/sweden/comments/${id}/${title}.json`;
     return url;
+  }
+
+  getReplies(comments: any) {
+    return comments.map(comment => {
+      return {
+        author: comment.data.author,
+        text: comment.data.body,
+        created: comment.data.created,
+        score: comment.data.score,
+        replies:
+          comment.data.replies &&
+          comment.data.replies.data &&
+          comment.data.replies.data.children
+            ? this.getReplies(comment.data.replies.data.children)
+            : null
+      };
+    });
   }
 }

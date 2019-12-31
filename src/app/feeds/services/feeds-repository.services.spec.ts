@@ -26,7 +26,7 @@ describe("Feeds repository service", () => {
 
   describe("getFeeds", () => {
     it("should call get method to retrieve all feeds with the correct URL", () => {
-      service.getFeeds(2).subscribe(feeds => {
+      service.getFeeds(2, {}).subscribe(feeds => {
         expect(feeds[1].author).toEqual("joni");
       });
       const req = httpTestingController.expectOne(

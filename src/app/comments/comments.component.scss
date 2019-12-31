@@ -1,0 +1,24 @@
+@import "../../styles.scss";
+
+.comment {
+  padding: 1em;
+  border-radius: 0.5em;
+  border: 1px solid darken($light, 10);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5em;
+
+  p {
+    margin: 0;
+
+    &.author {
+      color: $primary;
+      font-weight: bold;
+    }
+
+    &.text {
+      margin-bottom: 1em;
+    }
+  }
+}
