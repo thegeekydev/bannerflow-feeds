@@ -58,3 +58,34 @@
     margin-right: 1em;
   }
 }
+
+@media only screen and (max-width: 48em) {
+  :host {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .sidebar-box {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      display: none;
+    }
+
+    img {
+      margin-right: 0.3em;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+    li {
+      margin-right: 2em;
+    }
+  }
+}

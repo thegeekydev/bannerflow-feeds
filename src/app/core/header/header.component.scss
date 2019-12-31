@@ -22,3 +22,18 @@ a {
   font-size: 0.8em;
   color: #1b9cfc;
 }
+
+@media only screen and (max-width: 48em) {
+  :host {
+    text-align: center;
+  }
+
+  a {
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
