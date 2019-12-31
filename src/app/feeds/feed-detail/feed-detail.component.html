@@ -18,5 +18,6 @@
     <p>{{ feed.selftext }}</p>
   </section>
 
+  <p *ngIf="!commentsAndReplies.length">There is no comment yet!</p>
   <app-comments [comments]="commentsAndReplies"></app-comments>
 </div>
