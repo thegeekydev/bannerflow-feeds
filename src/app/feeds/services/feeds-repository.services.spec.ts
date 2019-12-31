@@ -36,4 +36,20 @@ describe("Feeds repository service", () => {
       httpTestingController.verify();
     });
   });
+
+  describe("getFeedByURL", () => {
+    it("should call get method to retrieve the feed data with the correct URL", () => {
+      let url = `r/sweden/comments/1/test-1.json`;
+
+      service.getFeedByURL(url).subscribe(data => {
+        expect(data.author).toEqual("morteza");
+      });
+
+      const req = httpTestingController.expectOne(
+        `${GlobalVariable.BASE_API_URL}${url}`
+      );
+      req.flush(feeds[0]);
+      httpTestingController.verify();
+    });
+  });
 });
