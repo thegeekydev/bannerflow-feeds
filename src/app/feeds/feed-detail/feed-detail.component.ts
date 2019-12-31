@@ -4,6 +4,9 @@ import { Subscription } from "rxjs/internal/Subscription";
 
 import { FeedsRepositoryService } from "../services/feeds-repository.services";
 import { FadeIn } from "src/app/shared/animations/fade-in";
+// Models
+import { Error } from "../models/error.model";
+import { Feed } from '../models/feed.model';
 
 @Component({
   selector: "app-feed-detail",
@@ -12,10 +15,10 @@ import { FadeIn } from "src/app/shared/animations/fade-in";
   animations: [FadeIn]
 })
 export class FeedDetailComponent implements OnInit {
-  feed: object = null;
+  feed: Feed = null;
   comments: Array<any> = null;
   commentsAndReplies: Array<any> = null;
-  error: Object = null;
+  error: Error = null;
 
   private subscription: Subscription;
 

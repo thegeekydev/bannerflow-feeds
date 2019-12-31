@@ -5,6 +5,9 @@ import { Subscription } from "rxjs/internal/Subscription";
 import { GlobalVariable } from "src/app/configs/global";
 import { FeedsRepositoryService } from "./services/feeds-repository.services";
 import { FadeIn } from "../shared/animations/fade-in";
+// Models
+import { Feed } from './models/feed.model';
+import { Error } from './models/error.model';
 
 @Component({
   selector: "app-feeds",
@@ -13,12 +16,12 @@ import { FadeIn } from "../shared/animations/fade-in";
   animations: [FadeIn]
 })
 export class FeedsComponent implements OnInit {
-  feeds: Object = null;
+  feeds: Feed = null;
   limits: Array<number> = GlobalVariable.limits;
   limit: number = GlobalVariable.limits[1];
   baseURL = GlobalVariable.BASE_API_URL;
   pagination: Object = null;
-  error: Object = null;
+  error: Error = null;
   private subscription: Subscription;
 
   constructor(private feedsRepoService: FeedsRepositoryService) {}
