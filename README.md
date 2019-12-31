@@ -1,4 +1,20 @@
-# BannerflowFeeds
+# BannerflowFeeds 
+[![Build Status](https://travis-ci.org/thegeekydev/bannerflow-feeds.svg?branch=master)](https://travis-ci.org/thegeekydev/bannerflow-feeds)  
+
+A simple `Angular 8` Reddit web application. [Demo](https://thegeekydev.github.io/bannerflow-feeds/)  
+
+[![ScreenShot](https://user-images.githubusercontent.com/54415941/71631642-f805eb80-2c1e-11ea-8a4d-3c1634a21b9b.png)](https://thegeekydev.github.io/bannerflow-feeds/)
+[![ScreenShot](https://user-images.githubusercontent.com/54415941/71631673-24ba0300-2c1f-11ea-83d8-9f2804f28e5d.png)](https://thegeekydev.github.io/bannerflow-feeds/)
+
+
+### Tech:
+- Angular 8
+- TypeScript
+- RxJS
+- Sass (SCSS)
+- Angular Animations 
+
+> The `CI/CD` pipeline handed over `TravisCI` and `GitHub Pages`. check `.travis.yml` for more information about how the configs are.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
