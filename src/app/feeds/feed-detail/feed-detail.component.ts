@@ -15,6 +15,7 @@ export class FeedDetailComponent implements OnInit {
   feed: object = null;
   comments: Array<any> = null;
   commentsAndReplies: Array<any> = null;
+  error: Object = null;
 
   private subscription: Subscription;
 
@@ -29,9 +30,16 @@ export class FeedDetailComponent implements OnInit {
     this.subscription = this.feedsRepoService
       .getFeedByURL(url)
       .subscribe(feed => {
-        this.feed = this.extractData("detail", feed);
-        this.comments = this.extractData("comments", feed);
-        this.commentsAndReplies = this.getReplies(this.comments);
+        if (feed.hasOwnProperty("error")) {
+          this.error = {
+            status: feed.status,
+            message: feed.statusText
+          };
+        } else {
+          this.feed = this.extractData("detail", feed);
+          this.comments = this.extractData("comments", feed);
+          this.commentsAndReplies = this.getReplies(this.comments);
+        }
       });
   }
 

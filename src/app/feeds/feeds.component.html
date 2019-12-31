@@ -1,5 +1,7 @@
-<app-spinner-loader [loading]="!feeds"></app-spinner-loader>
-
+<app-spinner-loader [loading]="!feeds && !error"></app-spinner-loader>
+<p *ngIf="error" class="alert danger">
+  {{ error.message }} while getting feeds!
+</p>
 <div class="feeds-list" *ngIf="feeds" [@simpleFadeAnimation]="'in'">
   <section class="controls">
     <div class="limit">

@@ -1,5 +1,7 @@
-<app-spinner-loader [loading]="!feed"></app-spinner-loader>
-
+<app-spinner-loader [loading]="!feed && !error"></app-spinner-loader>
+<p *ngIf="error" class="alert danger">
+  {{ error.message }} while getting feed detail!
+</p>
 <div *ngIf="feed" class="content" [@simpleFadeAnimation]="'in'">
   <section class="feed-header">
     <h2>{{ feed.title }}</h2>

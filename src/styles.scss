@@ -13,3 +13,14 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.alert {
+  padding: 1em;
+  border-radius: 5px;
+  font-weight: bold;
+
+  &.danger {
+    background-color: #eb4d4b;
+    color: $light;
+  }
+}

@@ -18,7 +18,7 @@ export class FeedsComponent implements OnInit {
   limit: number = GlobalVariable.limits[1];
   baseURL = GlobalVariable.BASE_API_URL;
   pagination: Object = null;
-
+  error: Object = null;
   private subscription: Subscription;
 
   constructor(private feedsRepoService: FeedsRepositoryService) {}
@@ -32,7 +32,14 @@ export class FeedsComponent implements OnInit {
     this.subscription = this.feedsRepoService
       .getFeeds(this.limit, this.pagination)
       .subscribe(feeds => {
-        this.feeds = feeds.data;
+        if (feeds.hasOwnProperty("error")) {
+          this.error = {
+            status: feeds.status,
+            message: feeds.statusText
+          };
+        } else {
+          this.feeds = feeds.data;
+        }
       });
   }
 
