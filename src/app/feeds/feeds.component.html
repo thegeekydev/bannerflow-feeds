@@ -25,7 +25,10 @@
   </section>
 
   <section class="feeds">
-    <div *ngFor="let feed of feeds.children" class="feed-item">
+    <div
+      *ngFor="let feed of feeds.children; trackBy: identify"
+      class="feed-item"
+    >
       <div class="feed-header">
         <div class="author">
           <img src="/assets/icons/author.svg" class="icon" alt="author" />

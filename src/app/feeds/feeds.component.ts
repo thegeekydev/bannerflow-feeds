@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 const slugify = require("@sindresorhus/slugify");
+import { Subscription } from "rxjs/internal/Subscription";
 
 import { GlobalVariable } from "src/app/configs/global";
 import { FeedsRepositoryService } from "./services/feeds-repository.services";
@@ -18,6 +19,8 @@ export class FeedsComponent implements OnInit {
   baseURL = GlobalVariable.BASE_API_URL;
   pagination: Object = null;
 
+  private subscription: Subscription;
+
   constructor(private feedsRepoService: FeedsRepositoryService) {}
 
   ngOnInit() {
@@ -26,7 +29,7 @@ export class FeedsComponent implements OnInit {
 
   getAllFeeds() {
     this.feeds = null;
-    this.feedsRepoService
+    this.subscription = this.feedsRepoService
       .getFeeds(this.limit, this.pagination)
       .subscribe(feeds => {
         this.feeds = feeds.data;
@@ -49,5 +52,13 @@ export class FeedsComponent implements OnInit {
 
   slugTitle(title: string): string {
     return slugify(title);
+  }
+
+  identify(index: number, item: any) {
+    return item.data.id;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

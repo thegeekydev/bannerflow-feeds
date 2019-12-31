@@ -7,4 +7,8 @@ import { Component, Input } from "@angular/core";
 })
 export class CommentsComponent {
   @Input() comments: any;
+
+  identify(index: number, item: any) {
+    return item.id;
+  }
 }
